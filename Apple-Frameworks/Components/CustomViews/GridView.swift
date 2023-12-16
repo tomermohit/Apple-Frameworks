@@ -1,5 +1,5 @@
 //
-//  CustomGridView.swift
+//  GridView.swift
 //  Apple-Frameworks
 //
 //  Created by Mohit Tomer on 16/12/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomGridView: View {
+struct GridView: View {
     
     let frameworks: Framework
     var body: some View {
