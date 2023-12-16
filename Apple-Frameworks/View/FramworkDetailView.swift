@@ -15,19 +15,9 @@ struct FramworkDetailView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Spacer()
-                Button {
-                    isShowingDetailView = false
-                }label: {
-                    Image(systemName: "xmark")
-                        .foregroundColor(Color(.label))
-                        .imageScale(.large)
-                        .frame(width: 44 , height: 44)
-                }
-            }
+            XDismissButton(isShowingDetailView: $isShowingDetailView)
             Spacer()
-            CustomGridView(frameworks: framwork)
+            GridView(frameworks: framwork)
                 .padding(.bottom, 30)
             Text(framwork.description)
             Spacer()
