@@ -1,27 +1,28 @@
 //
-//  GridView.swift
+//  ListView.swift
 //  Apple-Frameworks
 //
-//  Created by Mohit Tomer on 16/12/23.
+//  Created by Mohit Tomer on 17/12/23.
 //
 
 import SwiftUI
 
-struct GridView: View {
+
+struct ListView: View {
     
     let frameworks: Framework
     var body: some View {
-        VStack {
+        HStack {
             Image(frameworks.imageName)
                 .resizable()
-                .frame(width: 90, height: 90)
+                .frame(width: 60, height: 60)
             Text(frameworks.name)
                 .font(.title2)
                 .fontWeight(.semibold)
                 .scaledToFit()
                 .minimumScaleFactor(0.5)
-        }.padding()
+                .padding()
+        }
     }
     
 }
-

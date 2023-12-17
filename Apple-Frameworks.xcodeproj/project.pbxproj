@@ -18,6 +18,7 @@
 		A67A37C82B2E25E400E0E024 /* FrameworkGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A37C72B2E25E400E0E024 /* FrameworkGridViewModel.swift */; };
 		A67A37CB2B2E365C00E0E024 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A37CA2B2E365C00E0E024 /* SafariView.swift */; };
 		A67A37CD2B2E3E6300E0E024 /* XDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A37CC2B2E3E6300E0E024 /* XDismissButton.swift */; };
+		A67A37D32B2ECC6B00E0E024 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A37D22B2ECC6B00E0E024 /* ListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		A67A37C72B2E25E400E0E024 /* FrameworkGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkGridViewModel.swift; sourceTree = "<group>"; };
 		A67A37CA2B2E365C00E0E024 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		A67A37CC2B2E3E6300E0E024 /* XDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDismissButton.swift; sourceTree = "<group>"; };
+		A67A37D22B2ECC6B00E0E024 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				A67A37BF2B2E0EBE00E0E024 /* GridView.swift */,
+				A67A37D22B2ECC6B00E0E024 /* ListView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			files = (
 				A67A37BD2B2DF9A400E0E024 /* FrameworkGridView.swift in Sources */,
 				A67A37C02B2E0EBE00E0E024 /* GridView.swift in Sources */,
+				A67A37D32B2ECC6B00E0E024 /* ListView.swift in Sources */,
 				A67A37CD2B2E3E6300E0E024 /* XDismissButton.swift in Sources */,
 				A67A37AD2B2DEA1000E0E024 /* Apple_FrameworksApp.swift in Sources */,
 				A67A37BB2B2DF84800E0E024 /* Framework.swift in Sources */,
