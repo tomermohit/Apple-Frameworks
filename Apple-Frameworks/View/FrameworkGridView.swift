@@ -10,24 +10,48 @@ import SwiftUI
 struct FrameworkGridView: View {
     
     @StateObject private var viewModel: FrameworkGridViewModel = FrameworkGridViewModel()
+    @State private var isToggle: Bool = false
     
     var body: some View {
         NavigationStack {
-            ScrollView {
-                LazyVGrid(columns: viewModel.flexibleColumns) {
-                    ForEach(MockData.frameworks) { framework in
-                        GridView(frameworks: framework)
-                            .onTapGesture {
-                                viewModel.selectedFramework = framework
-                            }
+            
+            if isToggle {
+                    List(MockData.frameworks) { framework in
+                        NavigationLink(destination: FramworkDetailView(framwork: framework, isShowingDetailView: $viewModel.isShowingDetailView) ) {
+                            ListView(frameworks: framework)
+                        }
+                        .listRowBackground(Color.clear)
+                        .padding(.leading, -20)
+                        .padding(.trailing, -20)
+                }
+                    
+                .navigationTitle("🍎 Frameworks")
+                .navigationBarItems(trailing:
+                                        Toggle("", isOn: $isToggle)
+                    .toggleStyle(.switch)
+                )
+            } else {
+                ScrollView {
+                    LazyVGrid(columns: viewModel.flexibleColumns) {
+                        ForEach(MockData.frameworks) { framework in
+                            GridView(frameworks: framework)
+                                .onTapGesture {
+                                    viewModel.selectedFramework = framework
+                                }
+                        }
                     }
                 }
-            }
-            .navigationTitle("🍎 Frameworks")
-            .sheet(isPresented: $viewModel.isShowingDetailView) {
-                FramworkDetailView(framwork: viewModel.selectedFramework ?? MockData.sampleFramework, isShowingDetailView: $viewModel.isShowingDetailView)
+                .navigationTitle("🍎 Frameworks")
+                .navigationBarItems(trailing:
+                                        Toggle("", isOn: $isToggle)
+                    .toggleStyle(.switch)
+                )
+                .sheet(isPresented: $viewModel.isShowingDetailView) {
+                    FramworkDetailView(framwork: viewModel.selectedFramework ?? MockData.sampleFramework, isShowingDetailView: $viewModel.isShowingDetailView)
+                }
             }
         }
+        .accentColor(Color(.label))
     }
 }
 
