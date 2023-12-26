@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FramworkDetailView: View {
+struct FrameworkDetailView: View {
     
     var framwork: Framework
     @Binding var isShowingDetailView: Bool
@@ -35,5 +35,5 @@ struct FramworkDetailView: View {
 }
 
 #Preview {
-    FramworkDetailView(framwork: MockData.sampleFramework, isShowingDetailView: .constant(false))
+    FrameworkDetailView(framwork: MockData.sampleFramework, isShowingDetailView: .constant(false))
 }
