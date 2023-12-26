@@ -16,15 +16,15 @@ struct FrameworkGridView: View {
         NavigationStack {
             
             if isToggle {
-                    List(MockData.frameworks) { framework in
-                        NavigationLink(destination: FramworkDetailView(framwork: framework, isShowingDetailView: $viewModel.isShowingDetailView) ) {
-                            ListView(frameworks: framework)
-                        }
-                        .listRowBackground(Color.clear)
-                        .padding(.leading, -20)
-                        .padding(.trailing, -20)
+                List(MockData.frameworks) { framework in
+                    NavigationLink(destination: FrameworkDetailView(viewModel: FrameworkDetailViewModel(framework: framework, isShowingDetailView: $viewModel.isShowingDetailView)) ) {
+                        ListView(frameworks: framework)
+                    }
+                    .listRowBackground(Color.clear)
+                    .padding(.leading, -20)
+                    .padding(.trailing, -20)
                 }
-                    
+                
                 .navigationTitle("🍎 Frameworks")
                 .navigationBarItems(trailing:
                                         Toggle("", isOn: $isToggle)
@@ -47,8 +47,7 @@ struct FrameworkGridView: View {
                     .toggleStyle(.switch)
                 )
                 .sheet(isPresented: $viewModel.isShowingDetailView) {
-                    FramworkDetailView(framwork: viewModel.selectedFramework ?? MockData.sampleFramework, isShowingDetailView: $viewModel.isShowingDetailView)
-                }
+                    FrameworkDetailView(viewModel: FrameworkDetailViewModel(framework: viewModel.selectedFramework ?? MockData.sampleFramework, isShowingDetailView: $viewModel.isShowingDetailView) )               }
             }
         }
         .accentColor(Color(.label))
